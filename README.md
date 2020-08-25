@@ -16,7 +16,7 @@
 | nickname         | string | null: false |
 | email            | string | null: false |
 | password         | string | null: false |
-| favorite_team    | string | null: false |
+| team_id          | string | null: false |
 | favorite_player  | string | null: false |
 | introduction     | text   | null: false |
 
