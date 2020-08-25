@@ -1,0 +1,68 @@
+<h2>新規アカウント作成</h2>
+
+<%= form_with class: 'registration-main',model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class='field-box'>
+    <div class='field'>
+      <div class='field-label'>
+        <%= f.label :nickname, "ニックネーム"%>
+        <span class="indispensable">必須</span>
+      </div>
+      <div class='field-input'>
+        <%= f.text_field :nickname, autofocus: true%>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :email ,"メールアドレス"%><span class="indispensable">必須</span><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password ,"パスワード"%>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %>文字以上)</em>
+      <% end %><span class="indispensable">必須</span><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation ,"パスワード確認用"%><span class="indispensable">必須</span><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class='field'>
+      <div class='field-label'>
+        <%= f.label :team_id, "好きな球団"%>
+        <span class="indispensable">必須</span>
+      </div>
+      <div class='field-input'>
+        <%= f.collection_select(:team_id, Team.all, :id, :name, {}, {class:"select-box", id:"team"}) %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <div class='field-label'>
+        <%= f.label :favorite_player, "今推している選手"%>
+      </div>
+      <div class='field-input'>
+        <%= f.text_field :favorite_player, autofocus: true%>
+      </div>
+    </div>
+
+    <div class='field'>
+      <div class='field-label'>
+        <%= f.label :introduction, "自己紹介文"%>
+      </div>
+      <div class='field-input'>
+        <%= f.text_area :introduction, size: "35x10",autofocus: true%>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録する" ,class: "btn"%>
+  </div>
+<% end %>
+
+<%# render "devise/shared/links" %>
