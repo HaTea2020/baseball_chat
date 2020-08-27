@@ -1,2 +1,98 @@
-<h1>title</h1>
-<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+<%= render "shared/header"%>
+<div class='top-header'>
+  <div class='title-set'>
+  <%= image_tag "title_icon.png", class:"title-icon"%>
+  <h1 class='top-title'>プロ野球コミュニティーチャットサイト</h1>
+  </div>
+   <div class='nav'>
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "#", class: "user-option" %></li>
+        <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "user-option" %></li> 
+      <% else %>
+        <li><%= link_to 'ログイン',new_user_session_path, class: "user-option" %></li>
+        <li><%= link_to '新規登録',new_user_registration_path, class: "user-option" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+  
+ <div class='title-contents'>
+    <h2 class='service-title'>
+      プロ野球12球団のファン同士が繋がれる<br>
+      チャットサイトです。
+    </h2>
+    <div class="team">
+      <%= image_tag "giants_icon.png", class:"teams"%>  
+      <%= image_tag "baystars_icon.png", class:"teams"%>
+      <%= image_tag "tigers_icon.png", class:"teams"%>  
+      <%= image_tag "swallows_icon.png", class:"teams"%>  
+      <%= image_tag "dragons_icon.png", class:"teams"%>
+      <%= image_tag "carp_icon.png", class:"teams"%> 
+    </div>
+    <div class="team">
+      <%= image_tag "hawks_icon.png", class:"teams"%>  
+      <%= image_tag "lions_icon.png", class:"teams"%>
+      <%= image_tag "marines_icon.png", class:"teams"%>  
+      <%= image_tag "eagles_icon.png", class:"teams"%>  
+      <%= image_tag "buffaloes_icon.png", class:"teams"%>
+      <%= image_tag "fiters_icon.png", class:"teams"%> 
+    </div>
+    <p class='service-explain'>
+      各球団のルーム・個別ルームでお楽しみください
+    </p>
+    <p class='service-explain'>
+      ※相手が不快に思う言葉を使わない様にしましょう。
+    </p>
+    
+  </div>
+<div class="center-contents">
+  <h2 class="center-title">ようこそ!</h2>
+</div>
+<div class="center-list">
+  <ul class="s-team">
+    <%=image_tag "s-team.png", class: "spteam"%>
+    <li class="content"><%=image_tag "giants_icon.png", class:"icon"%> 読売ジャイアンツ</li>
+    <li class="content"><%=image_tag "baystars_icon.png", class:"icon"%> 横浜DeNAベイスターズ</li>
+    <li class="content"><%=image_tag "tigers_icon.png", class:"icon"%> 阪神タイガース</li>
+    <li class="content"><%=image_tag "swallows_icon.png", class:"icon"%> ヤクルトスワローズ</li>
+    <li class="content"><%=image_tag "dragons_icon.png", class:"icon"%> 中日ライオンズ</li>
+    <li class="content"><%=image_tag "carp_icon.png", class:"icon"%> 広島カープ</li>
+  </ul>
+  <ul class="p-team">
+    <%=image_tag "p-team.png", class: "spteam"%>
+    <li class="content"><%=image_tag "hawks_icon.png", class:"icon"%> ソフトバンクホークス</li>
+    <li class="content"><%=image_tag "lions_icon.png", class:"icon"%> 西武ライオンズ</li>
+    <li class="content"><%=image_tag "marines_icon.png", class:"icon"%> 千葉ロッテマリーンズ</li>
+    <li class="content"><%=image_tag "eagles_icon.png", class:"icon"%> 楽天イーグルス</li>
+    <li class="content"><%=image_tag "buffaloes_icon.png", class:"icon"%> オリックスバファローズ</li>
+    <li class="content"><%=image_tag "fiters_icon.png", class:"icon"%> 日本ハムファイターズ</li>
+  </ul>
+</div>
+<div class="second-contents">
+  <h2 class='service-title'>
+      ここからは個人で<br>
+      ルームを作成出来ます。
+    </h2>
+    <p class='service-explain'>
+      （例）ルーム名「何故その球団を応援し始めたか語るスレ」
+    </p>
+    <p class='service-explain'>
+      ※相手が不快に思う言葉を使わない様にしましょう。
+    </p>
+</div>
+<div class="under-contents">
+  <div class="under-left">
+    <h2 class="under-title">個別ルームの作成</h2>
+    <div>ルーム名</div>
+    <p><input type="text" name="name" size="30"></p>
+    <div>チャット内容</div>
+    <p><textarea name="kanso" rows="4" cols="40"></textarea></p>
+    <p><input type="submit" value="送信"></p>
+  </div>
+  <div class="under-right">
+    <h2 class="under-title">新規ルーム一覧</h2>
+  </div>
+</div>
+<div class="details">
+</div>

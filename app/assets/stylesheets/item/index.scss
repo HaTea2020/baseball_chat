@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
+
+.top-header{
+  display: flex;
+  justify-content: space-around;
+  // background-image: image-url("test.png");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: bottom;
+}
+.title-set{
+  display: flex;
+}
+.title-icon{
+  width: 80px;
+  height: 80px;
+}
+.top-title{
+  font-size: 50px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.user-option{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+}
+.user-option:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.title-contents {
+  width: 100vw;
+  background-image: image-url('baseball_header02.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+.service-title {
+  font-size: 8vh;
+}
+.teams{
+  width: 100px;
+  height: 100px;
+}
+
+.center-contents{
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.center-title{
+  font-size: 50px;
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+.center-title::before, .center-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.center-title::before {
+  left:0;
+}
+.center-title::after {
+  right: 0;
+}
+
+.center-list{
+  display: flex;
+  justify-content: space-evenly;
+}
+.spteam{
+  width: 150px;
+}
+
+// .content{
+//   font-size: 25px;
+//   padding-top: 20px;
+// }
+
+.s-team {
+  padding: 0;
+}
+
+ul.s-team li {
+  font-size: 25px;
+  color: #404040;
+  border-left: solid 6px #1fa67a;/*左側の線*/
+  border-bottom: solid 2px #dadada;/*下に灰色線*/
+  background: whitesmoke;
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+  font-weight: bold;
+}
+// ul.s-team li:nth-child(1) {
+//   background-image: image-url('giants_icon.png');
+//   width: 40px;
+// }
+
+.p-team{
+  padding: 0;
+}
+
+ul.p-team li{
+  font-size: 25px;
+  color: #404040;
+  border-left: solid 6px #1a71e2;/*左側の線*/
+  border-bottom: solid 2px #dadada;/*下に灰色線*/
+  background: whitesmoke;
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+  font-weight: bold;
+}
+
+.icon{
+  width: 25px;
+}
+
+.under-title{
+  padding-top: 20px;
+  font-size: 40px;
+  position: relative;
+  padding-left: 25px;
+}
+.under-title::before {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px rgb(119, 195, 223);
+}
+.under-title::after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px rgb(119, 195, 223);
+}
+.under-contents{
+  display: flex;
+  justify-content: space-evenly;
+}
+.second-contents {
+  // width: 100vw;
+  // background-image: image-url('second-image3.png');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // justify-content: center;
+  // color: #fff;
+  // text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+.under-left{
+  flex-basis: 30%; 
+  padding-right: 20px;
+}
+.under-right{
+  flex-basis: 60%; 
+}
