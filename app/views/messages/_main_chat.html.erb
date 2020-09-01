@@ -1,0 +1,28 @@
+<div class="main_top">
+  <div class=main_room_name>
+    <%=@room.name%>
+  </div>
+  <div class="upper-right">
+    <div class="chat_fin">
+      <% if user_signed_in? && current_user.id == @room.user_id%>
+        <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+      <%end%>
+    </div>
+    <div class="chat_fin">
+      <%= link_to "TOPページに戻る", root_path%>
+    </div>
+  </div>
+</div>
+<div class="main_center">
+  <%= render partial: 'message', collection: @messages%>
+</div>
+  <%= form_with model: [@room, @message], html: {class: "main_under"}, local: true do |f|%>
+    <div class=send_message>
+      <%= f.text_field :comment, class: 'form_message', placeholder: 'type a message'%>
+      <label class="form-image">
+        <span class="image-file">画像</span>
+        <%= f.file_field :image, class: 'hidden'%>
+      </label>
+    </div>
+    <%=f.submit '送信', class: 'form_submit'%>
+  <%end%>
