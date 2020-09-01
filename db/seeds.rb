@@ -5,3 +5,87 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create!(
+  nickname: "staff",
+  team_id: 11,
+  favorite_player: "種市",
+  introduction: "test",
+  email: 'test@test.com', 
+  password: 'aaa111'
+)
+Room.create!(
+  [
+    {
+      name: "読売ジャイアンツ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "横浜DeNAベイスターズ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "阪神タイガース専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "ヤクルトスワローズ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "中日ライオンズ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "広島カープ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "ソフトバンクホークス専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "西武ライオンズ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "千葉ロッテマリーンズ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "楽天イーグルス専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "オリックスバファローズ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    },
+    {
+      name: "日本ハムファイターズ専用チャット",
+      content: "test",
+      user_id: "1",
+      official: "Yes"
+    }
+  ]
+)

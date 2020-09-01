@@ -1,0 +1,25 @@
+<h2 class='title'><%= "#{@user.nickname}のプロフィール"%></h2>
+<div class='field-box'>
+  <div class='field'>
+    <div class='field-label'>
+      <%="好きな球団: #{@user.team.name}"%>
+    </div>
+  </div>
+  <div class='field'>
+    <div class='field-label'>
+      <%= "好きな選手: #{@user.favorite_player}"%>
+    </div>
+  </div>
+
+  <div class='field'>
+    <div class='field-label'>
+      自己紹介文<br>
+      <%if @user.introduction == ""%>
+        <%="皆さん宜しくお願いします。"%>
+      <%else%>
+        <%=@user.introduction%>
+      <%end%>
+    </div>
+  </div>
+</div>
+</div>

@@ -31,6 +31,12 @@
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   border-bottom: solid 3px #5e7fca;
 }
+
+@media (max-width: 1000px) {
+  .user-option {
+    font-size: 12px;
+  }
+}
 .user-option:active{
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
@@ -173,18 +179,15 @@ ul.p-team li{
   display: flex;
   justify-content: space-evenly;
 }
+/* タブレット表示時 */
+@media (max-width: 1000px) {
+  .under-contents {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .second-contents {
-  // width: 100vw;
-  // background-image: image-url('second-image3.png');
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: flex-start;
-  // justify-content: center;
-  // color: #fff;
-  // text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   text-align: center;
 }
 .under-left{
@@ -193,4 +196,11 @@ ul.p-team li{
 }
 .under-right{
   flex-basis: 60%; 
+}
+.room-content{
+  margin-top: 20px;
+  width: 900px;
+  height: 200px;
+  overflow: auto;
+  // background: skyblue;
 }

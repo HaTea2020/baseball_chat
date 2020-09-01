@@ -1,0 +1,23 @@
+<div class="messages">
+  <div class="upper-message">
+    <div class="left-message">
+      <div class="name">
+        <a href="/users/<%= message.user.id %>">
+          <%=message.user.nickname%>
+        </a>
+      </div>
+      <div class="time">
+        <%= l message.created_at%>
+      </div>
+    </div>
+    <div class="right-message">
+      <p><%=message.user.team.name%>・ファン</p>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message">
+      <%=message.comment%>
+    </div>
+    <%= image_tag message.image.variant(resize:'250x250'), class: 'message-image' if message.image.attached?%>
+  </div>
+</div>

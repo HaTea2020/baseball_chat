@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :team
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   with_options presence: true do
@@ -11,4 +13,7 @@ class User < ApplicationRecord
   def remember_me
     true
   end
+ 
+  has_many :rooms
+  has_many :messages
 end

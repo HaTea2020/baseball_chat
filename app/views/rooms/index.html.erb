@@ -52,21 +52,21 @@
 <div class="center-list">
   <ul class="s-team">
     <%=image_tag "s-team.png", class: "spteam"%>
-    <li class="content"><%=image_tag "giants_icon.png", class:"icon"%> 読売ジャイアンツ</li>
-    <li class="content"><%=image_tag "baystars_icon.png", class:"icon"%> 横浜DeNAベイスターズ</li>
-    <li class="content"><%=image_tag "tigers_icon.png", class:"icon"%> 阪神タイガース</li>
-    <li class="content"><%=image_tag "swallows_icon.png", class:"icon"%> ヤクルトスワローズ</li>
-    <li class="content"><%=image_tag "dragons_icon.png", class:"icon"%> 中日ライオンズ</li>
-    <li class="content"><%=image_tag "carp_icon.png", class:"icon"%> 広島カープ</li>
+    <li class="content"><%=image_tag "giants_icon.png", class:"icon"%> <a href="/rooms/1/messages">読売ジャイアンツ</a></li>
+    <li class="content"><%=image_tag "baystars_icon.png", class:"icon"%> <a href="/rooms/2/messages">横浜DeNAベイスターズ</a></li>
+    <li class="content"><%=image_tag "tigers_icon.png", class:"icon"%> <a href="/rooms/3/messages">阪神タイガース</a></li>
+    <li class="content"><%=image_tag "swallows_icon.png", class:"icon"%> <a href="/rooms/4/messages">ヤクルトスワローズ</a></li>
+    <li class="content"><%=image_tag "dragons_icon.png", class:"icon"%> <a href="/rooms/5/messages">中日ライオンズ</a></li>
+    <li class="content"><%=image_tag "carp_icon.png", class:"icon"%> <a href="/rooms/6/messages">広島カープ</a></li>
   </ul>
   <ul class="p-team">
     <%=image_tag "p-team.png", class: "spteam"%>
-    <li class="content"><%=image_tag "hawks_icon.png", class:"icon"%> ソフトバンクホークス</li>
-    <li class="content"><%=image_tag "lions_icon.png", class:"icon"%> 西武ライオンズ</li>
-    <li class="content"><%=image_tag "marines_icon.png", class:"icon"%> 千葉ロッテマリーンズ</li>
-    <li class="content"><%=image_tag "eagles_icon.png", class:"icon"%> 楽天イーグルス</li>
-    <li class="content"><%=image_tag "buffaloes_icon.png", class:"icon"%> オリックスバファローズ</li>
-    <li class="content"><%=image_tag "fiters_icon.png", class:"icon"%> 日本ハムファイターズ</li>
+    <li class="content"><%=image_tag "hawks_icon.png", class:"icon"%> <a href="/rooms/7/messages">ソフトバンクホークス</a></li>
+    <li class="content"><%=image_tag "lions_icon.png", class:"icon"%> <a href="/rooms/8/messages">西武ライオンズ</a></li>
+    <li class="content"><%=image_tag "marines_icon.png", class:"icon"%> <a href="/rooms/9/messages">千葉ロッテマリーンズ</a></li>
+    <li class="content"><%=image_tag "eagles_icon.png", class:"icon"%> <a href="/rooms/10/messages">楽天イーグルス</a></li>
+    <li class="content"><%=image_tag "buffaloes_icon.png", class:"icon"%> <a href="/rooms/11/messages">オリックスバファローズ</a></li>
+    <li class="content"><%=image_tag "fiters_icon.png", class:"icon"%> <a href="/rooms/12/messages">日本ハムファイターズ</a></li>
   </ul>
 </div>
 <div class="second-contents">
@@ -78,20 +78,42 @@
       （例）ルーム名「何故その球団を応援し始めたか語るスレ」
     </p>
     <p class='service-explain'>
+      内容「どの球団ファンでもOK！」
+    </p>
+    <p class='service-explain'>
       ※相手が不快に思う言葉を使わない様にしましょう。
     </p>
 </div>
 <div class="under-contents">
   <div class="under-left">
     <h2 class="under-title">個別ルームの作成</h2>
-    <div>ルーム名</div>
-    <p><input type="text" name="name" size="30"></p>
-    <div>チャット内容</div>
-    <p><textarea name="kanso" rows="4" cols="40"></textarea></p>
-    <p><input type="submit" value="送信"></p>
+    <%=form_with model: @room, local: true do |f|%>
+    <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
+      <%= f.hidden_field :official, value: "No" %>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+    <%= f.label :内容, class: 'chat-room-form__label'%>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_area :content, class: 'chat__room_name chat-room-form__input', size: "30×30"%>
+        </div>
+    <%= f.submit class: 'chat-room-form__action-btn'%>
+  <%end%>
   </div>
   <div class="under-right">
     <h2 class="under-title">新規ルーム一覧</h2>
+    <%@rooms.each do |room|%>
+      <div class="room-content">
+        <ul>
+          <%if room.official == "No"%>
+            <%=link_to (room_messages_path(room))do %>
+            <li><%=room.name%><br>
+            <%=room.content%><li>
+            <%end%>
+          <%end%>
+        </ul>
+      <div>
+    <%end%>
   </div>
 </div>
 <div class="details">
