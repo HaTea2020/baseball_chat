@@ -1,25 +1,31 @@
-<h2 class='title'><%= "#{@user.nickname}のプロフィール"%></h2>
-<div class='field-box'>
-  <div class='field'>
-    <div class='field-label'>
-      <%="好きな球団: #{@user.team.name}"%>
+<div class="back-img">
+  <h2 class='title'><%= "#{@user.nickname}のプロフィール"%></h2>
+  <%= render 'shared/stats' %>
+  <div class='field-box'>
+    <div class='field'>
+      <div class='field-label'>
+        <%="好きな球団: #{@user.team.name}"%>
+      </div>
     </div>
-  </div>
-  <div class='field'>
-    <div class='field-label'>
-      <%= "好きな選手: #{@user.favorite_player}"%>
+    <div class='field'>
+      <div class='field-label'>
+        <%= "好きな選手: #{@user.favorite_player}"%>
+      </div>
     </div>
-  </div>
 
-  <div class='field'>
-    <div class='field-label'>
-      自己紹介文<br>
-      <%if @user.introduction == ""%>
-        <%="皆さん宜しくお願いします。"%>
-      <%else%>
-        <%=@user.introduction%>
-      <%end%>
+    <div class='field'>
+      <div class='field-label'>
+        自己紹介文<br>
+        <%if @user.introduction == ""%>
+          <%="皆さん宜しくお願いします。"%>
+        <%else%>
+          <%=@user.introduction%>
+        <%end%>
+      </div>
     </div>
   </div>
-</div>
+  <% if user_signed_in? && current_user.id == @user.id%>
+    <div class="edit-btn"><%=link_to '編集する',edit_user_registration_path(current_user)%></div>
+  <%end%>
+  <%= render 'shared/follow_form' %>
 </div>

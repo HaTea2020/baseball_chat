@@ -4,10 +4,6 @@
 .top-header{
   display: flex;
   justify-content: space-around;
-  // background-image: image-url("test.png");
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: bottom;
 }
 .title-set{
   display: flex;
@@ -103,11 +99,6 @@
   width: 150px;
 }
 
-// .content{
-//   font-size: 25px;
-//   padding-top: 20px;
-// }
-
 .s-team {
   padding: 0;
 }
@@ -124,10 +115,7 @@ ul.s-team li {
   list-style-type: none!important;/*ポチ消す*/
   font-weight: bold;
 }
-// ul.s-team li:nth-child(1) {
-//   background-image: image-url('giants_icon.png');
-//   width: 40px;
-// }
+
 
 .p-team{
   padding: 0;
@@ -202,5 +190,28 @@ ul.p-team li{
   width: 900px;
   height: 200px;
   overflow: auto;
-  // background: skyblue;
 }
+
+.kakomi {
+  position: relative;
+  margin: 2em auto;
+  padding: 1.2em;
+  width: 70%;
+  border: 2px solid red; /* 枠線の太さ・色 */
+  color: #555555; /* 文字色 */
+  background-color: #fff;
+  box-shadow: 2px 2px 1px #c7c7c7;/* 影の色 */
+  border-radius: 8px; /* 角の丸み */
+  text-align: center;
+  font-size: 22px;
+ }
+ .kakomi-title {
+  position: absolute;
+  right: 35vw;
+  top: -15px;
+  padding: 0 .5em;
+  font-weight: bold;
+  font-size: 1.1em;
+  color:red; /* タイトル色 */
+  background-color: #fff;
+ }
