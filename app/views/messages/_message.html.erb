@@ -2,9 +2,13 @@
   <div class="upper-message">
     <div class="left-message">
       <div class="name">
+      <%if user_signed_in?%>
         <a href="/users/<%= message.user.id %>">
           <%=message.user.nickname%>
         </a>
+      <%else%>
+        <p><%=message.user.nickname%></p>
+      <%end%>
       </div>
       <div class="time">
         <%= l message.created_at%>
