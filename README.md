@@ -7,6 +7,9 @@
 # 利用方法
   ユーザー登録をしてからそれぞれのチャットルームでチャットを楽しめます。
 
+# サイトURL
+  https://baseball-chat2020.herokuapp.com/
+
 # テーブル設計
 
 ## users テーブル
@@ -49,3 +52,10 @@
 
 - belongs_to :room
 - belongs_to :user
+
+## relationship テーブル
+
+| Column       | Type     |
+| ------------ | -------- |
+| follower_id  | integer  |
+| following_id | integer  |
