@@ -7,7 +7,7 @@
    <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "user-option" %></li>
+        <li><%= link_to current_user.nickname, current_user, class: "user-option" %></li>
         <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "user-option" %></li> 
       <% else %>
         <li><%= link_to 'ログイン',new_user_session_path, class: "user-option" %></li>
@@ -49,6 +49,22 @@
 <div class="center-contents">
   <h2 class="center-title">ようこそ!</h2>
 </div>
+    <p class="official-text">
+      こちらのサイトでは12球団のファン同士を繋ぐ為に作られたサイトです。
+    </p>
+  <div class="kakomi">
+    <span class="kakomi-title">
+      説明
+    </span>
+      ログインしなくてもチャットを見る事が出来ます。<br>
+      ログインするとチャットやルーム作成する事が出来ます。
+  </div>
+    <p class="official-text">
+      12球団毎にルームを用意しています。
+    </p>
+    <p class="official-warning">
+      ※相手が不快に思う言葉を使わない様にしましょう。
+    </p>
 <div class="center-list">
   <ul class="s-team">
     <%=image_tag "s-team.png", class: "spteam"%>
@@ -75,7 +91,7 @@
       ルームを作成出来ます。
     </h2>
     <p class='service-explain'>
-      （例）ルーム名「何故その球団を応援し始めたか語るスレ」
+      （例）ルーム名「何故その球団を応援し始めたか語るルーム」
     </p>
     <p class='service-explain'>
       内容「どの球団ファンでもOK！」
@@ -88,7 +104,7 @@
   <div class="under-left">
     <h2 class="under-title">個別ルームの作成</h2>
     <%=form_with model: @room, local: true do |f|%>
-    <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
+    <%= f.label :チャットルーム名, class: 'chat-room-form__label'%><span class="indispensable">必須</span>
       <%= f.hidden_field :official, value: "No" %>
       <div class='chat-room-form__field--right'>
         <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
@@ -107,9 +123,13 @@
         <ul>
           <%if room.official == "No"%>
             <%=link_to (room_messages_path(room))do %>
+            <div class="room-detail">
+              <div class="room-name">
             <li><%=room.name%><br>
-            <%=room.content%><li>
+            <%=room.content%><li></div>
             <%end%>
+            <div class="room-at">
+              <%= l room.created_at%></div>
           <%end%>
         </ul>
       <div>

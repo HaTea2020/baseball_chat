@@ -1,0 +1,18 @@
+<h2 class="follow-title">フォロワーリスト</h2>
+<%if @user.followers.empty?%>
+  <div class="no-follow">まだフォローされた人はいません。</div>
+<%else%>
+ <% @user.followers.each do |user| %>
+<table class="follow-table">
+<tr>
+  <th>ニックネーム</th><th>チーム</th><th>好きな選手</th><th>マイページ</th>
+</tr>
+<tr>
+  <td>  <%= user.nickname %> </td>
+  <td>  <%= user.team.name%></td>
+  <td>  <%= user.favorite_player%></td>
+  <td><%= link_to '詳細', user_path(user) %></td>
+</tr>
+</table>
+<% end %>
+<% end %>
