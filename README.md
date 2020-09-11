@@ -25,6 +25,7 @@
  * ユーザー１ 
    * メールアドレス: test@gmail.com
    * パスワード: testpass 
+
 フォローテスト用 
  * ユーザー２ 
    * メールアドレス: test2@gmail.com
