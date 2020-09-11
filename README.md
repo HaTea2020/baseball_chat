@@ -22,13 +22,13 @@
 
 # テスト用アカウント
 チャット用 
- ＊ユーザー１ 
-   ＊メールアドレス: test@gmail.com
-   ＊パスワード: testpass 
+ *ユーザー１ 
+   *メールアドレス: test@gmail.com
+   *パスワード: testpass 
 フォローテスト用 
- ＊ユーザー２ 
-   ＊メールアドレス: test2@gmail.com
-   ＊パスワード: testpass
+ *ユーザー２ 
+   *メールアドレス: test2@gmail.com
+   *パスワード: testpass
 
 
 # 実装予定
