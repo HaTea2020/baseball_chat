@@ -1,5 +1,5 @@
 # アプリケーション名
-  プロ野球コミュニティーチャット
+  プロ野球コミュニティーチャットサイト
 
 # DEMO
 <img width="1426" alt="スクリーンショット 2020-09-14 18 02 55" src="https://user-images.githubusercontent.com/67272258/93066248-bafe5e00-f6b4-11ea-9cf8-4d9803161b98.png">
