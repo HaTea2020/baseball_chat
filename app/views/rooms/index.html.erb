@@ -103,6 +103,7 @@
 <div class="under-contents">
   <div class="under-left">
     <h2 class="under-title">個別ルームの作成</h2>
+    <div class="create-content">
     <%=form_with model: @room, local: true do |f|%>
     <%= f.label :チャットルーム名, class: 'chat-room-form__label'%><span class="indispensable">必須</span>
       <%= f.hidden_field :official, value: "No" %>
@@ -116,8 +117,10 @@
     <%= f.submit class: 'chat-room-form__action-btn'%>
   <%end%>
   </div>
+  </div>
   <div class="under-right">
     <h2 class="under-title">新規ルーム一覧</h2>
+    <div class="show-content">
     <%@rooms.each do |room|%>
       <div class="room-content">
         <ul>
@@ -134,6 +137,7 @@
         </ul>
       <div>
     <%end%>
+    </div>
   </div>
 </div>
 <div class="details">
